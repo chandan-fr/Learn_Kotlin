@@ -7,67 +7,55 @@ fun main() {
         Animal1("Fish")
     )
 
-    performActions(entities)
-}
-
-fun performActions(entities: Array<Entity>) {
     for (entity in entities) {
         entity.performActions()
     }
-}
-
-interface Action {
-    fun performAction()
 }
 
 interface Entity {
     fun performActions()
 }
 
-class Person1(val name: String) : Entity {
-    private val actions: MutableList<Action> = mutableListOf()
+interface CanRun1 {
+    fun canRun()
+}
 
-    fun canRead() {
-        actions.add(object : Action {
-            override fun performAction() {
-                println("$name is reading")
-            }
-        })
+interface CanRead1 {
+    fun canRead()
+}
+
+interface CanSwim1 {
+    fun canSwim()
+}
+
+class Person1(val name: String) : Entity, CanRun1, CanRead1 {
+    override fun canRun() {
+        println("$name can run")
     }
 
-    fun canRun() {
-        actions.add(object : Action {
-            override fun performAction() {
-                println("$name is running")
-            }
-        })
+    override fun canRead() {
+        println("$name can read")
     }
 
     override fun performActions() {
-        actions.forEach { it.performAction() }
+        println("$name is performing actions")
+        canRead()
+        canRun()
     }
 }
 
-class Animal1(val name: String) : Entity {
-    private val actions: MutableList<Action> = mutableListOf()
-
-    fun canRun() {
-        actions.add(object : Action {
-            override fun performAction() {
-                println("$name is running")
-            }
-        })
+class Animal1(val name: String) : Entity, CanRun1, CanSwim1 {
+    override fun canRun() {
+        println("$name can run")
     }
 
-    fun canSwim() {
-        actions.add(object : Action {
-            override fun performAction() {
-                println("$name is swimming")
-            }
-        })
+    override fun canSwim() {
+        println("$name can swim")
     }
 
     override fun performActions() {
-        actions.forEach { it.performAction() }
+        println("$name is performing actions")
+        canRun()
+        canSwim()
     }
 }
