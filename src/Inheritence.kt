@@ -5,7 +5,7 @@ fun main() {
     objchild.childFun()
 }
 
-open class Parent{
+private open class Parent{
     init {
         println("parent called")
     }
@@ -13,7 +13,7 @@ open class Parent{
     fun parentFun()= println("from parent")
 }
 
-class Child:Parent(){
+private class Child:Parent(){
     init {
         println("Child called")
     }

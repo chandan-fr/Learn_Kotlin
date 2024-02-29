@@ -10,30 +10,17 @@ fun main() {
     performActions(entities)
 }
 
-fun performActions(entities: Array<Entity2>) {
+private fun performActions(entities: Array<Entity2>) {
     for (entity in entities) {
-
         entity.performActions()
     }
 }
 
-interface CanRun2 {
-    fun run()
-}
-
-interface CanRead2 {
-    fun read()
-}
-
-interface CanSwim {
-    fun swim()
-}
-
-interface Entity2 : CanRun2, CanRead2, CanSwim {
+private interface Entity2 : CanRun, CanRead, CanSwim {
     fun performActions()
 }
 
-class Person2(val name: String) : Entity2 {
+private class Person2(val name: String) : Entity2 {
     override fun run() {
         println("$name is running")
     }
@@ -52,7 +39,7 @@ class Person2(val name: String) : Entity2 {
     }
 }
 
-class Animal2(val name: String) : Entity2 {
+private class Animal2(val name: String) : Entity2 {
     override fun run() {
         println("$name is running")
     }

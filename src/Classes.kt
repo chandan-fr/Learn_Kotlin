@@ -7,7 +7,7 @@ fun main() {
     mustang.applyBrakes()
 }
 
-class Car (val name: String, val type: String, var kmRan : Int ){
+private class Car (val name: String, val type: String, var kmRan : Int ){
     fun driveCar(){
         println("$name is ready to drive")
     }

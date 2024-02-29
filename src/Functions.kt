@@ -12,20 +12,20 @@ fun main() {
 }
 
 // defined return type
-fun calculateSum(x: Int, y: Int): Int{
+private fun calculateSum(x: Int, y: Int): Int{
     return x + y
 }
 
 // inline function
-fun multiply(x: Int, y: Int) = x * y
+private fun multiply(x: Int, y: Int) = x * y
 
 // unit type
-fun printMsg(name:String){
+private fun printMsg(name:String){
     println("Hello $name")
 }
 
 // default arguments
-fun sayHello(count: Int=2){
+private fun sayHello(count: Int=2){
     for(i in 1..count){
         println("Hello $i")
     }

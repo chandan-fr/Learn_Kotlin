@@ -2,8 +2,8 @@ import java.util.*
 
 fun main() {
     val obj = Calculator()
-    println(obj.add(2,3))
-    println(obj.multiply(2,3))
+    println(obj.add(2, 3))
+    println(obj.multiply(2, 3))
 
     val p1 = Persons("chandan", 18)
     println(p1.name)
@@ -18,24 +18,24 @@ fun main() {
     when a class created without a constructor kotlin adds a default constructor in the class
     which is params less.
  */
-class Calculator{
+private class Calculator {
     // for late initialization of value
-    lateinit var msg : String
+    lateinit var msg: String
 
-    fun add(a:Int, b:Int):Int{
-        return a+b
+    fun add(a: Int, b: Int): Int {
+        return a + b
     }
 
-    fun multiply(a:Int, b:Int):Int{
-        return a*b
+    fun multiply(a: Int, b: Int): Int {
+        return a * b
     }
 }
 
-class Persons (name:String, age: Int){
+private class Persons(name: String, age: Int) {
     var name: String = name
         // getters
         get() = field.uppercase()
-    var age:Int = age
+    var age: Int = age
         // setters
-        set(value) = if (value > 0 ) field = value else println("age can't be negative")
+        set(value) = if (value > 0) field = value else println("age can't be negative")
 }

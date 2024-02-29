@@ -5,6 +5,6 @@ fun main() {
     println(addition(y=2, x=5))
 }
 
-fun addition(x:Int, y: Int)= x + y
+private fun addition(x:Int, y: Int)= x + y
 
-fun addition(x:Double, y: Double)= x + y
+private fun addition(x:Double, y: Double)= x + y

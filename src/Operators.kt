@@ -18,7 +18,7 @@ fun arithmeticOps (i : Int, j : Int){
     println("Modulus: " + (i % j))
 }
 
-fun relationalOps(i : Int, j : Int){
+private fun relationalOps(i : Int, j : Int){
     println("gt: " + (i > j))
     println("lt: " + (i < j))
     println("gte: " + (i >= j))
@@ -27,19 +27,19 @@ fun relationalOps(i : Int, j : Int){
     println("ne: " + (i != j))
 }
 
-fun prePostInc(){
+private fun prePostInc(){
     var i = 10
     println(i++)
     println(++i)
 }
 
-fun prePostDec(){
+private fun prePostDec(){
     var i = 10
     println(i--)
     println(--i)
 }
 
-fun logicalOps(){
+private fun logicalOps(){
     val above70 = false
     val knowsPrograming = true
 

@@ -3,7 +3,7 @@ fun main() {
     forLoop()
 }
 
-fun whileLoop(){
+private fun whileLoop(){
     var x = 2
     var idx = 1
 
@@ -13,7 +13,7 @@ fun whileLoop(){
     }
 }
 
-fun forLoop(){
+private fun forLoop(){
     val number = 2
 
     for (i in 1..5){

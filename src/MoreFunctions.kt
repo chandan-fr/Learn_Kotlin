@@ -8,10 +8,10 @@ fun main() {
     println(fn(8.0, 3.0))
 }
 
-fun add (x:Double, y: Double): Double {
+private fun add (x:Double, y: Double): Double {
     return x + y
 }
 
-fun power (x:Double, y: Double): Double{
+private fun power (x:Double, y: Double): Double{
     return x.pow(y)
 }

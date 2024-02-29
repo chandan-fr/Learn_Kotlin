@@ -10,13 +10,13 @@ fun main() {
     readingObjects(reading)
 }
 
-fun runningObjects(running: Array<CanRun>) {
+private fun runningObjects(running: Array<CanRun>) {
     for (entity in running) {
         entity.run()
     }
 }
 
-fun readingObjects(reading: Array<Any>) {
+private fun readingObjects(reading: Array<Any>) {
     for (entity in reading) {
         if(entity is CanRun){
             entity.run()
@@ -27,19 +27,19 @@ fun readingObjects(reading: Array<Any>) {
     }
 }
 
-interface CanRun {
+internal interface CanRun {
     fun run()
 }
 
-interface CanRead {
+internal interface CanRead {
     fun read()
 }
 
-abstract class Animal() : CanRun {
+private abstract class Animal() : CanRun {
     abstract fun displayName()
 }
 
-class Cat(val name: String) : Animal() {
+private class Cat(val name: String) : Animal() {
     override fun run() = println("$name is running")
 
     override fun displayName() {
@@ -47,7 +47,7 @@ class Cat(val name: String) : Animal() {
     }
 }
 
-class Dog(val name: String) : Animal() {
+private class Dog(val name: String) : Animal() {
     override fun run() = println("$name is running")
 
     override fun displayName() {
@@ -55,7 +55,7 @@ class Dog(val name: String) : Animal() {
     }
 }
 
-class Mouse(val name: String) : Animal() {
+private class Mouse(val name: String) : Animal() {
     override fun run() = println("$name is running")
 
     override fun displayName() {
@@ -63,12 +63,12 @@ class Mouse(val name: String) : Animal() {
     }
 }
 
-class Man(val name: String) : CanRun, CanRead {
+private class Man(val name: String) : CanRun, CanRead {
     override fun run() = println("$name is running")
     override fun read() = println("$name is reading")
 }
 
-class Woman(val name: String) : CanRun, CanRead {
+private class Woman(val name: String) : CanRun, CanRead {
     override fun run() = println("$name is running")
     override fun read() = println("$name is reading")
 }

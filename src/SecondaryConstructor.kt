@@ -6,7 +6,7 @@ fun main() {
     hero.showDetails()
 }
 
-class TwoWheeler (val name: String, val type: String, val tyres: Int, val seats: Int){
+private class TwoWheeler (val name: String, val type: String, val tyres: Int, val seats: Int){
     constructor(sname: String, stype: String): this(sname, stype, tyres = 2, seats = 2)
 
     fun showDetails(){
